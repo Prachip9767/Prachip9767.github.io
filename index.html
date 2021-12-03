@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prachi Portfolio</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/icon2.png" type="image/gif" sizes="16x16">
+    </link>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant|Heebo&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/74e6adde73.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Home Page Starting -->
+    <div class="banner">
+        <!-- Nav Bar  -->
+        <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light">
+            <a class="navbar-brand h1" href="index.html">
+                <span class="navbar-img">
+                    <!-- <img class="img-fluid" style="height: 2rem;"
+                        src="Images/BdrkYC.png" alt="nav-bar-logo">  -->
+                </span>
+            </a>
+            <button onclick="changeHeadingBg()" class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapseContent" aria-controls="#navbarCollapseContent" aria-expanded="false"
+                aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse bg-lg-light" id="navbarCollapseContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#About">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#Skills">Skills</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#projects">Projects</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-light" href="#commits">Commits</a>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-light" href="allprojects.html">All Projects</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- check 2 end -->
+        <!-- <nav class="topnav">
+            <div id="logo">
+                <a href="#"><img src="data:image/jpeg;base64,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" /></a>
+            </div>
+            <ul>
+                <li class="active mr-2"><a href="#">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#commits">Portfolio</a></li>
+            </ul>
+        </nav> -->
+
+        <div class="cont mt-1 pt-5">
+            <img
+                src="https://user-images.githubusercontent.com/86509987/143037387-71172b6e-ffbb-4463-a80b-5d851e7d30c8.png" />
+            <h1 class="mt-3" style="color:#003153">Hi,</h1>
+            <h1 style="color:#003153">I'm <span  style="color:#003153">Prachi Pardeshi</span></h1>
+            <h2 class="mb-3 typewriter" style="color:#003153">Full-Stack Android Developer</h2>
+            <a href="#About"><button class="btn btn-outline-light mr-4 " style="color:#003153">Scroll Down<i
+                        class="fas fa-arrow-down ml-2"></i></button></a>
+        </div>
+        <!-- Social Media References -->
+
+        <div class="social-media">
+            <ul>
+                <a href="https://www.linkedin.com/in/prachi-pardeshi-15656b41/">
+                    <li><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkdin"></li>
+                </a>
+        
+               
+    
+                <a href="https://medium.com/@prachip293">
+                    <li><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="medium" class="rounded"></li>
+                </a>
+
+                <a href="https://github.com/Prachip9767">
+                    <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="github" class="rounded"></li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About part starting  -->
+    <a name="About"></a>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <!-- ======= About Me ======= -->
+        <div class="about-me container">
+            <div class="section-title">
+                <h2>About</h2>
+            </div>
+
+            <div class="row container">
+                <div class="col-lg-4 swing" data-aos="fade-right" >
+                    <img src="https://user-images.githubusercontent.com/86509987/143037387-71172b6e-ffbb-4463-a80b-5d851e7d30c8.png"
+                        class="img-fluid" alt="" />
+                </div>
+                <div class="col-lg-7 pt-4 pt-lg-0 content" data-aos="fade-left" style="font-size: 20px; ">
+                    <p>
+                        Dedicated and aspirant full-stack developer. Capable of writing production-ready code using Java,
+                         Kotlin on the frontend. RoomDatabase at the backend. Passionate about coding. Highly organized and a team player.
+                         Ability to work as an individual as well as in a group. Possess leadership skills.
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-7 justify-content-center">
+                            <p>
+                                    <i class="icofont-rounded-right"></i>
+                                    <strong>City:</strong> Pune, Maharashtra, India
+                              
+                                    <strong>Birthday:</strong> 18 sep 1998
+                                    <br>
+                                <br>
+                            
+                                    <i class="icofont-rounded-right"></i>
+                                    <strong>Contact info:</strong>
+                                
+                                <br>
+                             
+                                    <i class="icofont-rounded-right"></i>
+                                    <strong>Phone:</strong> +91 9767976210
+                                
+                        
+                        </div>
+                        <div class="col-lg-6">
+                           
+                                    <i class="icofont-rounded-right"></i>
+                                    <strong>Email:</strong> prachip293@gmail.com
+                            
+
+                        </div>
+
+                    </div>
+                    <!--  -->
+                    <div class="button-effect">
+                        <h5 style="color: brown;"></h5>
+                        <a class="effect effect-5" href="https://drive.google.com/file/d/1hJTEVgNjQiY5UZC1GZWgJ3Wv6uPsm4jh/view?usp=sharing" target ="_blank" rel="noopenernoreferrer"download>Resume</a>
+                        
+                        
+                    </div>
+                    <!--  -->
+                    <!-- <a href="Documents/Aman's Resume (1).pdf" download><button
+                            class="btn btn-success col-sm-12 col-lg-4 my-2">Download
+                            Resume <i class="fas fa-download"></i></button></a>
+                    <a href="Documents/Aman's Resume (1).pdf"><button
+                            class="btn btn-warning col-sm-12 col-lg-4 my-2  ">View
+                            Resume <i class=" fas fa-eye"></i></button></a>
+                    <button type="button" class="btn button secondary-button text-uppercase second-btn"><a
+                            href="tel:+91-8986369752">Hire Me</a></button> -->
+                </div>
+            </div>
+        </div>
+        <!-- End About Me -->
+    </section>
+    <!-- End About Section -->
+
+    <!-- Skill Part starting -->
+    <a name="Skills"></a>
+    <h2 class=" text-dark pt-5" style="text-align: center;">TECH
+        <swap class="text-primary">STACKS</swap>
+    </h2>
+    <div id="skills-bd" class="skills-area section-padding pt-5 pb-5">
+        <div class="container">
+            <div id="techKnown">
+
+                <div class="swing">
+                    <img height="100px"
+                        src="https://user-images.githubusercontent.com/86509987/136335621-87be21cd-f7a4-4485-8db3-31d995fbb1a3.png" />
+                    <p style="font-size: 20px;">Java</p>
+                </div>
+
+                <div class="swing">
+                    <img height="100px"
+                        src="https://user-images.githubusercontent.com/86509987/136336514-55a6254e-7189-4b50-94a3-a7a29cbc2163.png" />
+                    <p style="font-size: 20px;">Kotlin</p>
+                </div>
+
+                <div class="swing">
+                    <img height="100px" src="https://user-images.githubusercontent.com/86509987/136339553-43d9b12b-ce96-4216-b649-4b4330883f95.jpg" />
+                    <p style="font-size: 20px;">Roomdatabase</p>
+                </div>
+
+            
+
+                <div class="swing">
+                    <img height="100px" src="https://user-images.githubusercontent.com/86509987/136340724-ce4c87b8-a4a0-440a-a9f5-243ea13e9cce.png" />
+                    <p style="font-size: 20px;">SQL Lite</p>
+                </div>
+
+                <div class="swing">
+                    <img height="100px" src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" />
+                    <p style="font-size: 20px;">Firebase</p>
+                </div>
+
+                <div class="swing">
+                    <img height="100px"
+                        src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" />
+                    <p style="font-size: 20px;">GIT</p>
+                </div>
+
+            
+                <div class="swing">
+                    <img height="100px"
+                        src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" />
+                    <p style="font-size: 20px;">Postman</p>
+                </div>
+            
+            <!-- end skillbar -->
+
+        </div>
+    </div>
+    <!--  -->
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Projects part -->
+    <a name="projects"></a>
+
+
+
+
+
+
+    <!-- <div class="row"> -->
+    <h2 class="text-dark pt-5" style="text-align: center;">MY
+        <swap class="text-primary">PROJECTS</swap>
+    </h2>
+    <!-- </div> -->
+    <!-- ttesting -->
+
+    
+
+
+
+
+    <div class="container" >
+        <div  class="row row-cols-2 row-cols-md-5 g-4">
+            <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                &nbsp
+            </div> -->
+             <!-- whatsapp clone start -->
+             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="productCardContainer">
+                    <div>
+<!--                         
+                        <span class="badge badge-primary">Kotlin</span>
+                        <span class="badge badge-primary">Hilt and Dependency Inject</span>
+                        <span class="badge badge-primary">MVVM architecture</span>
+                        <span class="badge badge-primary">Firebase</span>
+                        <span class="badge badge-primary">CameraX</span> -->
+                    
+                    </div>
+                    <div class="productCardContent">
+                        <div class="productCardImage">
+                            <img src="https://user-images.githubusercontent.com/86509987/144618210-676480df-f9bd-47ee-8a54-649151b9e0b7.png" alt="Lifesum App" />
+                            <!-- <a href="" class="imageCardEffect">Product</a> -->
+                        </div>
+                        <div class="productCardDetails">
+                            <div class="productCardModel">
+                                <span class="modelCardEffect"></span>
+                                <a href="">
+                                   Plantr
+                                    <!-- <span>Price: For Free</span> -->
+                                </a>
+
+                            </div>
+
+                            
+                            <div class="">
+                                <div class="list-group h-100">
+                                    <div href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+
+                                            <!-- You may have some pretty big ideas for your 
+                                            garden this year, but do you know how to make them happen?
+                                             If not, that’s where this awesome app will help you to achieve that,Plantr 
+                                             app where you can swap and scan the plant and also take expert 
+                                            advice  -->
+                                            <span class="font-weight-bold">TecStack </span>
+                                                <br>
+                                            <span class="font-weight-bold">Kotlin ,Firebase, cameraX ,MVVM architecture ,kotlin dependency inject Hilt </span>
+                                            <span class="font-weight-bold">  </span>
+                                        </span>
+                                    </div>
+                                    <!-- <a href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Describes himself as a genius, but he is mentally retarded
+                                        </span>
+                                    </a> -->
+                                </div>
+                            </div>
+                            <!-- <div class="productCardPrice">
+                                <a href="https://github.com/Prachip9767/LifesumApp/tree/Prachi/app/src/main/java/com/example/lifesum" class="btn">
+                                    <i class="fa fa-code"></i> Source Code
+                                </a>
+                            
+                            </div> -->
+                            
+                        </div>
+                        <div class="container p-2 ">
+                            <div class="row gx-5">
+                              <div class="col">
+                               <div class=""><div class="productCardPrice">
+                                    <a href="https://github.com/chekeAditya/Plantr" class="btn">
+                                        <i class="fa fa-code"></i> Source Code
+                                    </a>
+                            
+                            </div></div>
+                              </div>
+                              <div class="col">
+                                <div class=""><div class="productCardPrice">
+                                    <a href="https://play.google.com/store/apps/details?id=com.applicationPantr.plantr" class="btn">
+                                        <i class="fa fa-code"></i> Playstore Link
+                                    </a>
+                                
+                                </div></div>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="productCardPrice">
+                            <!-- <a href="https://play.google.com/store/apps/details?id=com.applicationPantr.plantr" class="btn">
+                                <i class="fa fa-code"></i> playstore
+                            </a> -->
+                        
+                        </div>
+
+                        
+                </div>
+                <!-- <div class="card" style="width: 18rem;">
+                    <img src="https://user-images.githubusercontent.com/86509987/144545143-79d0bc53-c20d-4b34-a656-e2d13fec14fa.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div> -->
+            </div>
+            </div>
+
+            <!-- whatsapp clone ends -->
+            <!-- fb clone start -->
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="productCardContainer">
+                    <div>
+                        <!-- <span class="badge badge-primary">Kotlin</span>
+                        <span class="badge badge-primary">Api Postman</span>
+                        <span class="badge badge-primary">Firebase</span> -->
+                    
+                    </div>
+                    <div class="productCardContent">
+                        <div class="productCardImage">
+                            <img src="https://user-images.githubusercontent.com/86509987/144620080-fdb48704-02c6-430f-a044-7d89010e2c5f.png" alt="Amazon Prime Video" />
+                            <!-- <a href="" class="imageCardEffect">Product</a> -->
+                        </div>
+                        <div class="productCardDetails">
+                            <div class="productCardModel">
+                                <span class="modelCardEffect"></span>
+                                <a href="">
+                                    Prime Video Clone
+                                    <!-- <span>Price: For Free</span> -->
+                                </a>
+
+                            </div>
+                            <div class=" ">
+                                <div class="list-group ">
+                                    <div href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span> 
+                                        <span class="detailInfo" >
+                                            <span class="font-weight-bold">TecStack </span>
+                                           .<br>
+                                            <span class="font-weight-bold">Postman API calling and Recycler view for fetching data ,Youtube Player for playing videos. </span>
+                                            <span class="font-weight-bold"> </span>
+                                        </span>
+                                    </div>
+                                    <!-- <a href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Describes himself as a genius, but he is mentally retarded
+                                        </span>
+                                    </a> -->
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="container p-2 ">
+                            <div class="row gx-5">
+                              <div class="col">
+                               <div class=""><div class="productCardPrice">
+                                    <a href="https://github.com/chekeAditya/Amazon-Prime" class="btn">
+                                        <i class="fa fa-code"></i> Source Code
+                                    </a>
+                            
+                            </div></div>
+                              </div>
+                              <div class="col">
+                                <div class=""><div class="productCardPrice">
+                                    <a href="https://www.youtube.com/watch?v=NFglPeaRn9o" class="btn">
+                                        <i class="fa fa-code"></i> Demo Video
+                                    </a>
+                                
+                                </div></div>
+                              </div>
+                            </div>
+                          </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- fb clone ends -->
+
+            <!-- -1 -->
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="productCardContainer">
+                    <div>
+                        <!-- <span class="badge badge-primary">Java</span>
+                        <span class="badge badge-primary">Firebase</span>
+                        <span class="badge badge-primary">RoomDatabase</span> -->
+
+                    </div>
+                    <div class="productCardContent">
+                        <div class="productCardImage">
+                            <img src="https://user-images.githubusercontent.com/86509987/144616303-1ef3b581-23ee-40a2-8c7c-7ed066efb909.png" alt="Decathlon" />
+                            <!-- <a href="" class="imageCardEffect">Product</a> -->
+                        </div>
+                        <div class="productCardDetails">
+                            <div class="productCardModel">
+                                <span class="modelCardEffect"></span>
+                                <a href="">
+                                    Decathlon App Clone
+                                    <!-- <span>Price: For Free</span> -->
+                                </a>
+
+                            </div>
+                            <div class="">
+                                <div class="list-group">
+                                    <div href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            <span class="font-weight-bold">TecStack </span>
+                                     <br>
+                                     
+                                            <span class="font-weight-bold"> Recycler View for product list,Used Roomdatabase for cart. </span>
+                                            <span class="font-weight-bold"> </span>
+                                            <br>
+                                            <br>
+                                
+                                        </span>
+                                    </div>
+                                    <!-- <a href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Describes himself as a genius, but he is mentally retarded
+                                        </span>
+                                    </a> -->
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="container p-2 ">
+                            <div class="row gx-5">
+                              <div class="col">
+                               <div class=""><div class="productCardPrice">
+                                    <a href="https://github.com/Anush01/decathlon/tree/master/app/src/main/java/com/example/anushmp/decathlonapp" class="btn">
+                                        <i class="fa fa-code"></i> Source Code
+                                    </a>
+                            
+                            </div></div>
+                              </div>
+                              <div class="col">
+                                <div class=""><div class="productCardPrice">
+                                    <a href="https://www.youtube.com/watch?v=B8R4egL4fSU" class="btn">
+                                        <i class="fa fa-code"></i> Demo Video
+                                    </a>
+                                
+                                </div></div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- -1 -->
+            <!-- -2 -->
+            <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="productCardContainer">
+                    <div>
+                        <span class="badge badge-danger">New</span>
+                        <span class="badge badge-primary">ReactJS</span>
+                        <span class="badge badge-primary">Context API</span>
+                        <span class="badge badge-primary">Hashtag</span>
+                    </div>
+                    <div class="productCardContent">
+                        <div class="productCardImage">
+                            <img src="Images/todo.png" alt="invoiceapp" />
+                            <a href="" class="imageCardEffect">Product</a>
+                        </div>
+                        <div class="productCardDetails">
+                            <div class="productCardModel">
+                                <span class="modelCardEffect"></span>
+                                <a href="">
+                                    Todo App With Hashtag (#)
+                                    <-- <span>Price: For Free</span> -->
+                                <!-- </a>
+
+                            </div>
+                            <div class="productCardDetailsList">
+                                <div class="list-group">
+                                    <div href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            User can add list to todo and toggle it ? Done : not done <br>
+                                            <span class="font-weight-bold">Can Also made hashtag with selective list and
+                                                later click on hashtag to all list related to it</span>
+                                        </span>
+                                    </div> -->
+                                    <!-- <a href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Describes himself as a genius, but he is mentally retarded
+                                        </span>
+                                    </a> -->
+                         <!-- </div> -->
+                            <!-- </div>
+                            <div class="productCardPrice">
+                                <a href="https://github.com/amananku26/Ofline-Todo-App" class="btn">
+                                    <i class="fa fa-code"></i> Source Code
+                                </a>
+                                <a href="..\todo.html" class="btn">
+                                    <i class="fa fa-video"></i> Watch Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- -2 -->
+            <!-- FIRST -->
+            <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="productCardContainer">
+                    <span class="badge badge-secondary">React JS</span>
+                    <span class="badge badge-warning"><a href="https://shopping-cart-a0d9a.web.app/">Live Web App</a></span>
+                    <div class="productCardContent">
+                        <div class="productCardImage">
+                            <img src="Images/Screenshot 2020-10-14 115302.jpg" alt="" />
+                            <a href="" class="imageCardEffect">Product</a>
+                        </div>
+                        <div class="productCardDetails">
+                            <div class="productCardModel">
+                                <span class="modelCardEffect"></span>
+                                <a href="">
+                                    Shopping Cart
+                                    <-- <span>Price: For Free</span> -->
+                                <!-- </a>
+                            </div>
+                            <div class="productCardDetailsList">
+                                <div class="list-group">
+                                    <div href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Concept used ContextApi, Axios, Styled-Components, React-Router-Dom.
+                                            User can Filter thrughout the Products <br>
+                                            ex - Sort Price , filter category
+                                        </span>
+                                    </div> -->
+                                    <!-- <a href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Describes himself as a genius, but he is mentally retarded
+                                        </span>
+                                    </a> -->
+                                <!-- </div>
+                            </div>
+                            <div class="productCardPrice">
+                                <a href="https://github.com/amananku26/Basic-Shopping-Cart" class="btn">
+                                    <i class="fa fa-code"></i> Source Code
+                                </a>
+                                <a href="..\UP_Demo.html" class="btn">
+                                    <i class="fa fa-video"></i> Watch Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- second -->
+            <!-- start https://linkedin-clone-a7ba5.web.app/ -->
+            <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="productCardContainer">
+                    <div>
+                        <span class="badge badge-secondary">React JS</span>
+                        <span class="badge badge-warning"><a href="https://linkedin-clone-a7ba5.web.app/">Live Web App</a></span>
+                    </div>
+                    <div class="productCardContent">
+                        <div class="productCardImage">
+                            <img src="Images/linkedclone.jpg" alt="" />
+                            <a href="" class="imageCardEffect">Product</a>
+                        </div>
+                        <div class="productCardDetails">
+                            <div class="productCardModel">
+                                <span class="modelCardEffect"></span>
+                                <a href="">
+                                    Linkedin Clone
+                                    <-- <span>Price: For Free</span> -->
+                                <!-- </a>
+                            </div>
+                            <div class="productCardDetailsList">
+                                <div class="list-group">
+                                    <div href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            This page is designed using HTML, CSS and Reactjs , redux ,
+                                            reduxthunk , json mocker. <br> User can upload post Like and comment on
+                                            other post also.
+                                        </span>
+                                    </div>
+                                    <-- <a href="" class="list-group-item">
+                                        <span class="detailIcon">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </span>
+                                        <span class="detailInfo">
+                                            Describes himself as a genius, but he is mentally retarded
+                                        </span>
+                                    <-- </a> -->
+                                <!-- </div>
+                            </div> -->
+                            <!-- <div class="productCardPrice">
+                                <a href="https://github.com/amananku26/Linkedin-Clone" class="btn">
+                                    <i class="fa fa-code"></i> Source Code
+                                </a>
+                                <a href="..\MR_Demo.html" class="btn">
+                                    <i class="fa fa-video"></i> Watch Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --> 
+            <!-- third -->
+          
+            <!-- six end here
+
+        </div>
+        <div style="text-align: center;font-weight: bolder;text-decoration: none;">
+            <a href="allprojects.html">More Projects...</a>
+        </div>
+    </div>
+    </div>
+
+
+    <-- <a name="commits"></a> -->
+
+    <!-- Portfolio area -->
+    <!-- <div class=" bg-light p-5">
+        <h2 class=" text-dark pt-5" style="text-align: center;">MY
+            <swap class="text-primary">PORTFOLIO</swap>
+        </h2> --> 
+
+
+        <!-- <div class="gitPortfolioimg" class="m-5">
+            <center><img src="Images/commits.png" /></center>
+        </div> --> 
+
+
+
+        <!--Statistic area starts-->
+<!-- 
+        <div class="statistic-area section-padding custom-border p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="item">
+                            <h2 class="counter">200+</h2>
+                            <p>Hours Worked</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="item">
+                            <h2 class="counter">500+</h2>
+                            <p>Cups of Coffee</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="item">
+                            <h2 class="counter">300+</h2>
+                            <p>Hakerrank Problems</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="item">
+                            <h2 class="counter">600+</h2>
+                            <p>Github Commits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <!-- erdfv njks -->
+ <!-- <div class="row"> -->
+    <!-- <h2 class="text-dark pt-5" style="text-align: center;">Some of My Most Liked     
+        <swap class="text-primary">Linkedin Post</swap>
+    </h2>
+    <-- </div> -->
+    <!-- ttesting -->
+    <!-- <div class="container">
+        <div class="row">
+            <-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                &nbspS
+            </div> -->
+             <!-- whatsapp clone start -->
+             <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6752832868000657409?compact=1" height="284" width="350" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+             </div>
+             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6749276297085763584?compact=1" height="284" width="350" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+             </div>
+        </div>
+    </div> --> 
+
+    <!-- Statistic area ends -->
+
+    <div class=" text-center col-xs-12 col-sm-12 col-md-6 col-lg-12 ">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <p>Made With <i class="fa fa-heart" style="font-size:21px;color:red"></i> By <a
+                            href="https://github.com/amananku26" target="_blank">Prachi Pardeshi</a></p>
+                </div>
+                <div class="social-media">
+                    <ul>
+                        <a href="https://www.linkedin.com/in/prachi-pardeshi-15656b41/">
+                            <li><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" target ="_blank" rel="noopenernoreferrer" alt="linkdin" ></li>
+                        </a>
+                    
+                        <a href="https://github.com/Prachip9767">
+                            <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="github" class="rounded" target ="_blank" rel="noopenernoreferrer"></li>
+                        </a>
+                        <a href="https://medium.com/@prachip293">
+                            <li><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="medium" class="rounded" target ="_blank" rel="noopenernoreferrer"></li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer Area Ends-->
+
+
+
+    <script src="https://kit.fontawesome.com/74e6adde73.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".navbar");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
+        var chColor = document.getElementById("navbar")
+        function changeHeadingBg() {
+            chColor.style.background = "#f50057";
+        }  
+    </script>
+</body>
+
+</html>
